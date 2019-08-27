@@ -288,15 +288,15 @@ func unpackRemoteRepo(s *schema.ResourceData) *v1.RemoteRepository {
 	repo.PackageType = d.getStringRef("package_type")
 	// The following flags only are allowable in an Update API call
 	// for particular package types.
-	if repo.PackageType == "bower" {
+	if *repo.PackageType == "bower" {
 		repo.BowerRegistryURL = d.getStringRef("bower_registry_url")
 	}
-	if repo.PackageType == "vcs" {
+	if *repo.PackageType == "vcs" {
 		repo.VcsGitDownloadUrl = d.getStringRef("vcs_git_download_url")
 		repo.VcsGitProvider = d.getStringRef("vcs_git_provider")
 		repo.VcsType = d.getStringRef("vcs_type")
 	}
-	if repo.PackageType == "nuget" {
+	if *repo.PackageType == "nuget" {
 		repo.FeedContextPath = d.getStringRef("feed_context_path")
 		repo.DownloadContextPath = d.getStringRef("download_context_path")
 		repo.V3FeedUrl = d.getStringRef("v3_feed_url")
