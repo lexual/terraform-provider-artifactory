@@ -5,4 +5,4 @@ require (
 	github.com/hashicorp/terraform v0.11.13
 )
 
-replace github.com/atlassian/go-artifactory/v2 => github.com/lexual/go-artifactory/v2 lex_debug_v02
+replace github.com/atlassian/go-artifactory/v2 => github.com/lexual/go-artifactory/v2 lex_debug_v03
